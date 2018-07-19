@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Virgin Holidays - Flight Information Display</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular.min.js.map"></script>
+    <script src="flightdisplay.js"></script>     
+</head>
+
+<body ng-app="flightDisplay" >
+    <div ng-controller="flightDisplayController as vm" >
+        <h1>
+            Virgin Holidays - Flight Information Display 
+        </h1>                
+        <div>
+            <p>
+                Select date: <input id="selectDate" 
+                                    type="date" 
+                                    ng-model="vm.flightDate"                                
+                                    ng-change="vm.openCSV()"
+                                    >
+            </p>
+            <p>
+                The selected day was {{ vm.flightDateDay }}.
+            </P>
+        </div>
+
+        <div class="flightTable" id="board">   
+        </div>
+
+    </div>
+    
+</body>
+</html>
